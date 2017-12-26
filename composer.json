@@ -1,0 +1,51 @@
+{
+    "name": "freedomcore/trinitycore-character",
+    "description": "TrinityCore Character Library",
+    "keywords": ["freedomcore", "trinitycore", "character", "libarary"],
+    "license": "MIT",
+    "support": {
+        "issues": "https://github.com/darki73/trinitycore-character/issues",
+        "source": "https://github.com/darki73/trinitycore-character"
+    },
+    "authors": [
+        {
+            "name": "Zhivolupov Ivan",
+            "email": "ivan.zhivolupov@freedomcore.ru",
+            "homepage": "https://freedomcore.ru",
+            "role": "Developer"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "FreedomCore\\TrinityCore\\Character\\": "source/"
+        }
+    },
+    "require-dev": {
+        "phpunit/phpunit" : "^6.5.5",
+        "scrutinizer/ocular": "^1.1",
+        "doctrine/dbal": "^2.3",
+        "phpdocumentor/phpdocumentor": "2.*",
+        "squizlabs/php_codesniffer": "^3.2",
+        "codedungeon/phpunit-result-printer": "^0.4.4"
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "FreedomCore\\TrinityCore\\Character\\Tests\\": "tests"
+        }
+    },
+    "require": {
+        "php": ">=7.0"
+    },
+    "scripts": {
+        "test": "phpunit",
+        "cs": "phpcs --standard=psr2 ./source"
+    },
+    "minimum-stability": "stable",
+    "extra": {
+        "laravel": {
+            "providers": [
+                "FreedomCore\\TrinityCore\\Character\\CharacterServiceProvider"
+            ]
+        }
+    }
+}
