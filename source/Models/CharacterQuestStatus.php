@@ -6,40 +6,40 @@ use FreedomCore\TrinityCore\Character\Models\CharacterBaseModel;
  * Class CharacterQuestStatus
  * @package FreedomCore\TrinityCore\Character\Models
  */
-class CharacterQuestStatus extends CharacterBaseModel {
+class CharacterQuestStatus extends CharacterBaseModel
+{
 
-	/**
-	* @inheritdoc
-	* @var string
-	*/
-	protected $table = 'character_queststatus';
-	/**
-	* @inheritdoc
-	* @var bool
-	*/
-	public $incrementing = false;
-	/**
-	* @inheritdoc
-	* @var bool
-	*/
-	public $timestamps = false;
-	/**
-	* @inheritdoc
-	* @var array
-	*/
-	protected $casts = [
-		'guid' => 'int',
-		'quest' => 'int',
-		'status' => 'int',
-		'timer' => 'int'
-	];
-	/**
-	* @inheritdoc
-	* @var array
-	*/
-	protected $fillable = [
-		'status',
-		'timer'
-	];
-
+    /**
+    * @inheritdoc
+    * @var string
+    */
+    protected $table = 'character_queststatus';
+    /**
+    * @inheritdoc
+    * @var bool
+    */
+    public $incrementing = true;
+    /**
+    * @inheritdoc
+    * @var bool
+    */
+    public $timestamps = false;
+    /**
+    * @inheritdoc
+    * @var array
+    */
+    protected $casts = [
+        'guid' => 'int',
+        'quest' => 'int',
+        'status' => 'int',
+        'timer' => 'int'
+    ];
+    /**
+    * @inheritdoc
+    * @var array
+    */
+    protected $fillable = [
+        'status',
+        'timer'
+    ];
 }

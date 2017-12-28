@@ -9,7 +9,8 @@ use Symfony\Component\Process\Process;
  * Class InstallCommand
  * @package FreedomCore\TrinityCore\Character\Commands
  */
-class InstallCommand extends Command {
+class InstallCommand extends Command
+{
     use Seedable;
 
     /**
@@ -34,14 +35,16 @@ class InstallCommand extends Command {
      * Fire Installation
      * @return mixed
      */
-    public function fire() {
+    public function fire()
+    {
         return $this->handle();
     }
 
     /**
      * Handle Installation
      */
-    public function handle() {
+    public function handle()
+    {
         $this->info('Publishing package assets, database and configuration files...');
         $this->call('vendor:publish', ['--provider' => CharacterServiceProvider::class]);
         $this->info('Dumping the autoloaded files and reloading all new files');
@@ -52,11 +55,11 @@ class InstallCommand extends Command {
      * Find suitable composer executable.
      * @return string
      */
-    protected function findComposer() : string {
+    protected function findComposer() : string
+    {
         if (file_exists(getcwd() . '/composer.phar')) {
             return '"' . PHP_BINARY . '" ' . getcwd() . '/composer.phar';
         }
         return 'composer';
     }
-
 }

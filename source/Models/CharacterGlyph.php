@@ -6,26 +6,26 @@ use FreedomCore\TrinityCore\Character\Models\CharacterBaseModel;
  * Class CharacterGlyph
  * @package FreedomCore\TrinityCore\Character\Models
  */
-class CharacterGlyph extends CharacterBaseModel {
+class CharacterGlyph extends CharacterBaseModel
+{
 
-	/**
-	* @inheritdoc
-	* @var bool
-	*/
-	public $incrementing = false;
-	/**
-	* @inheritdoc
-	* @var bool
-	*/
-	public $timestamps = false;
-	/**
-	* @inheritdoc
-	* @var array
-	*/
-	protected $casts = [
-		'guid' => 'int',
-		'talentGroup' => 'int',
-		'glyphId' => 'int'
-	];
-
+    /**
+    * @inheritdoc
+    * @var bool
+    */
+    public $incrementing = true;
+    /**
+    * @inheritdoc
+    * @var bool
+    */
+    public $timestamps = false;
+    /**
+    * @inheritdoc
+    * @var array
+    */
+    protected $casts = [
+        'guid' => 'int',
+        'talentGroup' => 'int',
+        'glyphId' => 'int'
+    ];
 }

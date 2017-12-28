@@ -6,7 +6,8 @@ use Illuminate\Filesystem\Filesystem;
  * Class Character
  * @package FreedomCore\TrinityCore\Character
  */
-class Character {
+class Character
+{
 
     /**
      * Package Version
@@ -23,7 +24,8 @@ class Character {
     /**
      * Character constructor.
      */
-    public function __construct() {
+    public function __construct()
+    {
         $this->fileSystem = app(FileSystem::class);
         $this->findPackageVersion();
     }
@@ -31,7 +33,8 @@ class Character {
     /**
      * Find Package Version
      */
-    protected function findPackageVersion() {
+    protected function findPackageVersion()
+    {
         if (!is_null($this->version)) {
             return;
         }
@@ -47,5 +50,4 @@ class Character {
             }
         }
     }
-
 }

@@ -8,14 +8,16 @@ use \FreedomCore\TrinityCore\Character\Facades\Character as CharacterFacade;
  * Class CharacterServiceProvider
  * @package FreedomCore\TrinityCore\Character
  */
-class CharacterServiceProvider extends ServiceProvider {
+class CharacterServiceProvider extends ServiceProvider
+{
 
     /**
      * Register Service Provider
      */
-    public function register() {
+    public function register()
+    {
         (AliasLoader::getInstance())->alias('Character', CharacterFacade::class);
-        $this->app->singleton('character', function() {
+        $this->app->singleton('character', function () {
             return new Character();
         });
         $this->loadHelpers();
@@ -33,12 +35,15 @@ class CharacterServiceProvider extends ServiceProvider {
      * Bootstrap the application events.
      * @return void
      */
-    public function boot() { }
+    public function boot()
+    {
+    }
 
     /**
      * Load helpers.
      */
-    protected function loadHelpers() {
+    protected function loadHelpers()
+    {
         foreach (glob(__DIR__.'/Helpers/*.php') as $filename) {
             require_once $filename;
         }
@@ -47,7 +52,8 @@ class CharacterServiceProvider extends ServiceProvider {
     /**
      * Register the publishable files.
      */
-    private function registerPublishableResources() {
+    private function registerPublishableResources()
+    {
         $publishablePath = dirname(__DIR__) . '/publishable';
         $publishable = [
             'migrations' => [
@@ -68,25 +74,27 @@ class CharacterServiceProvider extends ServiceProvider {
     /**
      * Register Configuration Files
      */
-    public function registerConfigs() {
+    public function registerConfigs()
+    {
         $this->mergeConfigFrom(
-            dirname(__DIR__) . '/publishable/config/character.php', 'character'
+            dirname(__DIR__) . '/publishable/config/character.php',
+            'character'
         );
     }
 
     /**
      * Register the commands accessible from the Console.
      */
-    private function registerConsoleCommands() {
+    private function registerConsoleCommands()
+    {
         $this->commands(Commands\InstallCommand::class);
-
+        $this->commands(Commands\LoadGearSets::class);
     }
 
     /**
      * Register the commands accessible from the App.
      */
-    private function registerAppCommands() {
-
+    private function registerAppCommands()
+    {
     }
-
 }

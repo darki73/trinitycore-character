@@ -7,7 +7,8 @@ use Illuminate\Database\Eloquent\Model;
  * Class CharacterBaseModel
  * @package FreedomCore\TrinityCore\Character\Models
  */
-abstract class CharacterBaseModel extends Model {
+abstract class CharacterBaseModel extends Model
+{
 
     /**
      * Connection name
@@ -62,19 +63,33 @@ abstract class CharacterBaseModel extends Model {
     /**
      * CharacterBaseModel constructor.
      */
-    public function __construct() {
+    public function __construct()
+    {
         parent::__construct();
         $this->getDatabaseConnection();
     }
 
     /**
+     * Fake ID incrementation
+     * @return int
+     */
+    public function scopeIncrementID()
+    {
+        if ($this->primaryKey) {
+            return $this->max($this->primaryKey) + 1;
+        } else {
+            throw new \RuntimeException('Primary key is not set!');
+        }
+    }
+
+    /**
      * Get Database Connection Settings
      */
-    protected function getDatabaseConnection() {
+    protected function getDatabaseConnection()
+    {
         $existingConnections = Config::get('database.connections');
         if (!array_key_exists('character', $existingConnections)) {
             Config::set('database.connections.character', Config::get($this->configurationKey));
         }
     }
-
 }

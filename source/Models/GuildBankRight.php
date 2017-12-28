@@ -6,41 +6,41 @@ use FreedomCore\TrinityCore\Character\Models\CharacterBaseModel;
  * Class GuildBankRight
  * @package FreedomCore\TrinityCore\Character\Models
  */
-class GuildBankRight extends CharacterBaseModel {
+class GuildBankRight extends CharacterBaseModel
+{
 
-	/**
-	* @inheritdoc
-	* @var string
-	*/
-	protected $table = 'guild_bank_right';
-	/**
-	* @inheritdoc
-	* @var bool
-	*/
-	public $incrementing = false;
-	/**
-	* @inheritdoc
-	* @var bool
-	*/
-	public $timestamps = false;
-	/**
-	* @inheritdoc
-	* @var array
-	*/
-	protected $casts = [
-		'guildid' => 'int',
-		'TabId' => 'int',
-		'rid' => 'int',
-		'gbright' => 'int',
-		'SlotPerDay' => 'int'
-	];
-	/**
-	* @inheritdoc
-	* @var array
-	*/
-	protected $fillable = [
-		'gbright',
-		'SlotPerDay'
-	];
-
+    /**
+    * @inheritdoc
+    * @var string
+    */
+    protected $table = 'guild_bank_right';
+    /**
+    * @inheritdoc
+    * @var bool
+    */
+    public $incrementing = false;
+    /**
+    * @inheritdoc
+    * @var bool
+    */
+    public $timestamps = false;
+    /**
+    * @inheritdoc
+    * @var array
+    */
+    protected $casts = [
+        'guildid' => 'int',
+        'TabId' => 'int',
+        'rid' => 'int',
+        'gbright' => 'int',
+        'SlotPerDay' => 'int'
+    ];
+    /**
+    * @inheritdoc
+    * @var array
+    */
+    protected $fillable = [
+        'gbright',
+        'SlotPerDay'
+    ];
 }
