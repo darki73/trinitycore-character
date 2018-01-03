@@ -4,7 +4,18 @@ use FreedomCore\TrinityCore\Character\Models\CharacterBaseModel;
 
 /**
  * Class CharacterGift
+ *
  * @package FreedomCore\TrinityCore\Character\Models
+ * @property int $guid
+ * @property int $item_guid
+ * @property int $entry
+ * @property int $flags
+ * @method static \Illuminate\Database\Eloquent\Builder|\FreedomCore\TrinityCore\Character\Models\CharacterBaseModel incrementID()
+ * @method static \Illuminate\Database\Eloquent\Builder|\FreedomCore\TrinityCore\Character\Models\CharacterGift whereEntry($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\FreedomCore\TrinityCore\Character\Models\CharacterGift whereFlags($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\FreedomCore\TrinityCore\Character\Models\CharacterGift whereGuid($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\FreedomCore\TrinityCore\Character\Models\CharacterGift whereItemGuid($value)
+ * @mixin \Eloquent
  */
 class CharacterGift extends CharacterBaseModel
 {

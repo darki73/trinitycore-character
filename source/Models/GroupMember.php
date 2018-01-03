@@ -4,7 +4,20 @@ use FreedomCore\TrinityCore\Character\Models\CharacterBaseModel;
 
 /**
  * Class GroupMember
+ *
  * @package FreedomCore\TrinityCore\Character\Models
+ * @property int $guid
+ * @property int $memberGuid
+ * @property int $memberFlags
+ * @property int $subgroup
+ * @property int $roles
+ * @method static \Illuminate\Database\Eloquent\Builder|\FreedomCore\TrinityCore\Character\Models\CharacterBaseModel incrementID()
+ * @method static \Illuminate\Database\Eloquent\Builder|\FreedomCore\TrinityCore\Character\Models\GroupMember whereGuid($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\FreedomCore\TrinityCore\Character\Models\GroupMember whereMemberFlags($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\FreedomCore\TrinityCore\Character\Models\GroupMember whereMemberGuid($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\FreedomCore\TrinityCore\Character\Models\GroupMember whereRoles($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\FreedomCore\TrinityCore\Character\Models\GroupMember whereSubgroup($value)
+ * @mixin \Eloquent
  */
 class GroupMember extends CharacterBaseModel
 {

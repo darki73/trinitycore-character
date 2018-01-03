@@ -4,7 +4,22 @@ use FreedomCore\TrinityCore\Character\Models\CharacterBaseModel;
 
 /**
  * Class CharacterDeclinedName
+ *
  * @package FreedomCore\TrinityCore\Character\Models
+ * @property int $guid Global Unique Identifier
+ * @property string $genitive
+ * @property string $dative
+ * @property string $accusative
+ * @property string $instrumental
+ * @property string $prepositional
+ * @method static \Illuminate\Database\Eloquent\Builder|\FreedomCore\TrinityCore\Character\Models\CharacterBaseModel incrementID()
+ * @method static \Illuminate\Database\Eloquent\Builder|\FreedomCore\TrinityCore\Character\Models\CharacterDeclinedName whereAccusative($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\FreedomCore\TrinityCore\Character\Models\CharacterDeclinedName whereDative($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\FreedomCore\TrinityCore\Character\Models\CharacterDeclinedName whereGenitive($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\FreedomCore\TrinityCore\Character\Models\CharacterDeclinedName whereGuid($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\FreedomCore\TrinityCore\Character\Models\CharacterDeclinedName whereInstrumental($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\FreedomCore\TrinityCore\Character\Models\CharacterDeclinedName wherePrepositional($value)
+ * @mixin \Eloquent
  */
 class CharacterDeclinedName extends CharacterBaseModel
 {

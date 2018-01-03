@@ -4,7 +4,30 @@ use FreedomCore\TrinityCore\Character\Models\CharacterBaseModel;
 
 /**
  * Class AuctionHouse
+ *
  * @package FreedomCore\TrinityCore\Character\Models
+ * @property int $id
+ * @property int $auctioneerguid
+ * @property int $itemguid
+ * @property int $itemowner
+ * @property int $buyoutprice
+ * @property int $time
+ * @property int $buyguid
+ * @property int $lastbid
+ * @property int $startbid
+ * @property int $deposit
+ * @method static \Illuminate\Database\Eloquent\Builder|\FreedomCore\TrinityCore\Character\Models\CharacterBaseModel incrementID()
+ * @method static \Illuminate\Database\Eloquent\Builder|\FreedomCore\TrinityCore\Character\Models\AuctionHouse whereAuctioneerguid($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\FreedomCore\TrinityCore\Character\Models\AuctionHouse whereBuyguid($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\FreedomCore\TrinityCore\Character\Models\AuctionHouse whereBuyoutprice($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\FreedomCore\TrinityCore\Character\Models\AuctionHouse whereDeposit($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\FreedomCore\TrinityCore\Character\Models\AuctionHouse whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\FreedomCore\TrinityCore\Character\Models\AuctionHouse whereItemguid($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\FreedomCore\TrinityCore\Character\Models\AuctionHouse whereItemowner($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\FreedomCore\TrinityCore\Character\Models\AuctionHouse whereLastbid($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\FreedomCore\TrinityCore\Character\Models\AuctionHouse whereStartbid($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\FreedomCore\TrinityCore\Character\Models\AuctionHouse whereTime($value)
+ * @mixin \Eloquent
  */
 class AuctionHouse extends CharacterBaseModel
 {

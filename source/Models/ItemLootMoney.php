@@ -4,7 +4,14 @@ use FreedomCore\TrinityCore\Character\Models\CharacterBaseModel;
 
 /**
  * Class ItemLootMoney
+ *
  * @package FreedomCore\TrinityCore\Character\Models
+ * @property int $container_id guid of container (item_instance.guid)
+ * @property int $money money loot (in copper)
+ * @method static \Illuminate\Database\Eloquent\Builder|\FreedomCore\TrinityCore\Character\Models\CharacterBaseModel incrementID()
+ * @method static \Illuminate\Database\Eloquent\Builder|\FreedomCore\TrinityCore\Character\Models\ItemLootMoney whereContainerId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\FreedomCore\TrinityCore\Character\Models\ItemLootMoney whereMoney($value)
+ * @mixin \Eloquent
  */
 class ItemLootMoney extends CharacterBaseModel
 {

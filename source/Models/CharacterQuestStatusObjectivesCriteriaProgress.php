@@ -4,7 +4,18 @@ use FreedomCore\TrinityCore\Character\Models\CharacterBaseModel;
 
 /**
  * Class CharacterQuestStatusObjectivesCriteriaProgress
+ *
  * @package FreedomCore\TrinityCore\Character\Models
+ * @property int $guid
+ * @property int $criteriaId
+ * @property int $counter
+ * @property int $date
+ * @method static \Illuminate\Database\Eloquent\Builder|\FreedomCore\TrinityCore\Character\Models\CharacterBaseModel incrementID()
+ * @method static \Illuminate\Database\Eloquent\Builder|\FreedomCore\TrinityCore\Character\Models\CharacterQuestStatusObjectivesCriteriaProgress whereCounter($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\FreedomCore\TrinityCore\Character\Models\CharacterQuestStatusObjectivesCriteriaProgress whereCriteriaId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\FreedomCore\TrinityCore\Character\Models\CharacterQuestStatusObjectivesCriteriaProgress whereDate($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\FreedomCore\TrinityCore\Character\Models\CharacterQuestStatusObjectivesCriteriaProgress whereGuid($value)
+ * @mixin \Eloquent
  */
 class CharacterQuestStatusObjectivesCriteriaProgress extends CharacterBaseModel
 {

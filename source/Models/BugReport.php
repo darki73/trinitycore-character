@@ -4,7 +4,16 @@ use FreedomCore\TrinityCore\Character\Models\CharacterBaseModel;
 
 /**
  * Class Bugreport
+ *
  * @package FreedomCore\TrinityCore\Character\Models
+ * @property int $id Identifier
+ * @property string $type
+ * @property string $content
+ * @method static \Illuminate\Database\Eloquent\Builder|\FreedomCore\TrinityCore\Character\Models\CharacterBaseModel incrementID()
+ * @method static \Illuminate\Database\Eloquent\Builder|\FreedomCore\TrinityCore\Character\Models\BugReport whereContent($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\FreedomCore\TrinityCore\Character\Models\BugReport whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\FreedomCore\TrinityCore\Character\Models\BugReport whereType($value)
+ * @mixin \Eloquent
  */
 class BugReport extends CharacterBaseModel
 {

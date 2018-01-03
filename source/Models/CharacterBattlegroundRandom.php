@@ -4,7 +4,12 @@ use FreedomCore\TrinityCore\Character\Models\CharacterBaseModel;
 
 /**
  * Class CharacterBattlegroundRandom
+ *
  * @package FreedomCore\TrinityCore\Character\Models
+ * @property int $guid
+ * @method static \Illuminate\Database\Eloquent\Builder|\FreedomCore\TrinityCore\Character\Models\CharacterBaseModel incrementID()
+ * @method static \Illuminate\Database\Eloquent\Builder|\FreedomCore\TrinityCore\Character\Models\CharacterBattlegroundRandom whereGuid($value)
+ * @mixin \Eloquent
  */
 class CharacterBattlegroundRandom extends CharacterBaseModel
 {

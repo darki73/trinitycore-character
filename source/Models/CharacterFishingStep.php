@@ -4,7 +4,14 @@ use FreedomCore\TrinityCore\Character\Models\CharacterBaseModel;
 
 /**
  * Class CharacterFishingStep
+ *
  * @package FreedomCore\TrinityCore\Character\Models
+ * @property int $guid Global Unique Identifier
+ * @property int $fishingSteps
+ * @method static \Illuminate\Database\Eloquent\Builder|\FreedomCore\TrinityCore\Character\Models\CharacterBaseModel incrementID()
+ * @method static \Illuminate\Database\Eloquent\Builder|\FreedomCore\TrinityCore\Character\Models\CharacterFishingStep whereFishingSteps($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\FreedomCore\TrinityCore\Character\Models\CharacterFishingStep whereGuid($value)
+ * @mixin \Eloquent
  */
 class CharacterFishingStep extends CharacterBaseModel
 {

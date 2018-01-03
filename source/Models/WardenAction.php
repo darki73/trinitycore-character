@@ -4,7 +4,14 @@ use FreedomCore\TrinityCore\Character\Models\CharacterBaseModel;
 
 /**
  * Class WardenAction
+ *
  * @package FreedomCore\TrinityCore\Character\Models
+ * @property int $wardenId
+ * @property int $action
+ * @method static \Illuminate\Database\Eloquent\Builder|\FreedomCore\TrinityCore\Character\Models\CharacterBaseModel incrementID()
+ * @method static \Illuminate\Database\Eloquent\Builder|\FreedomCore\TrinityCore\Character\Models\WardenAction whereAction($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\FreedomCore\TrinityCore\Character\Models\WardenAction whereWardenId($value)
+ * @mixin \Eloquent
  */
 class WardenAction extends CharacterBaseModel
 {

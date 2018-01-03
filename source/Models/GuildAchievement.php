@@ -4,7 +4,18 @@ use FreedomCore\TrinityCore\Character\Models\CharacterBaseModel;
 
 /**
  * Class GuildAchievement
+ *
  * @package FreedomCore\TrinityCore\Character\Models
+ * @property int $guildId
+ * @property int $achievement
+ * @property int $date
+ * @property string $guids
+ * @method static \Illuminate\Database\Eloquent\Builder|\FreedomCore\TrinityCore\Character\Models\CharacterBaseModel incrementID()
+ * @method static \Illuminate\Database\Eloquent\Builder|\FreedomCore\TrinityCore\Character\Models\GuildAchievement whereAchievement($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\FreedomCore\TrinityCore\Character\Models\GuildAchievement whereDate($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\FreedomCore\TrinityCore\Character\Models\GuildAchievement whereGuids($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\FreedomCore\TrinityCore\Character\Models\GuildAchievement whereGuildId($value)
+ * @mixin \Eloquent
  */
 class GuildAchievement extends CharacterBaseModel
 {

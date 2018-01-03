@@ -4,7 +4,19 @@ use FreedomCore\TrinityCore\Character\Models\CharacterBaseModel;
 
 /**
  * Class CharacterInventory
+ *
  * @package FreedomCore\TrinityCore\Character\Models
+ * @property int $guid Global Unique Identifier
+ * @property int $bag
+ * @property int $slot
+ * @property int $item Item Global Unique Identifier
+ * @property-read \FreedomCore\TrinityCore\Character\Models\ItemInstance $reference
+ * @method static \Illuminate\Database\Eloquent\Builder|\FreedomCore\TrinityCore\Character\Models\CharacterBaseModel incrementID()
+ * @method static \Illuminate\Database\Eloquent\Builder|\FreedomCore\TrinityCore\Character\Models\CharacterInventory whereBag($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\FreedomCore\TrinityCore\Character\Models\CharacterInventory whereGuid($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\FreedomCore\TrinityCore\Character\Models\CharacterInventory whereItem($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\FreedomCore\TrinityCore\Character\Models\CharacterInventory whereSlot($value)
+ * @mixin \Eloquent
  */
 class CharacterInventory extends CharacterBaseModel
 {

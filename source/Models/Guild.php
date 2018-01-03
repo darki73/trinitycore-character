@@ -4,7 +4,38 @@ use FreedomCore\TrinityCore\Character\Models\CharacterBaseModel;
 
 /**
  * Class Guild
+ *
  * @package FreedomCore\TrinityCore\Character\Models
+ * @property int $guildid
+ * @property string $name
+ * @property int $leaderguid
+ * @property int $EmblemStyle
+ * @property int $EmblemColor
+ * @property int $BorderStyle
+ * @property int $BorderColor
+ * @property int $BackgroundColor
+ * @property string $info
+ * @property string $motd
+ * @property int $createdate
+ * @property int $BankMoney
+ * @property-read \Illuminate\Database\Eloquent\Collection|\FreedomCore\TrinityCore\Character\Models\GuildFinderApplicant[] $applicants
+ * @property-read \FreedomCore\TrinityCore\Character\Models\Character $leader
+ * @property-read \Illuminate\Database\Eloquent\Collection|\FreedomCore\TrinityCore\Character\Models\GuildMember[] $members
+ * @property-read \FreedomCore\TrinityCore\Character\Models\GuildFinderGuildSetting $recruitmentSettings
+ * @method static \Illuminate\Database\Eloquent\Builder|\FreedomCore\TrinityCore\Character\Models\CharacterBaseModel incrementID()
+ * @method static \Illuminate\Database\Eloquent\Builder|\FreedomCore\TrinityCore\Character\Models\Guild whereBackgroundColor($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\FreedomCore\TrinityCore\Character\Models\Guild whereBankMoney($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\FreedomCore\TrinityCore\Character\Models\Guild whereBorderColor($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\FreedomCore\TrinityCore\Character\Models\Guild whereBorderStyle($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\FreedomCore\TrinityCore\Character\Models\Guild whereCreatedate($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\FreedomCore\TrinityCore\Character\Models\Guild whereEmblemColor($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\FreedomCore\TrinityCore\Character\Models\Guild whereEmblemStyle($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\FreedomCore\TrinityCore\Character\Models\Guild whereGuildid($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\FreedomCore\TrinityCore\Character\Models\Guild whereInfo($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\FreedomCore\TrinityCore\Character\Models\Guild whereLeaderguid($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\FreedomCore\TrinityCore\Character\Models\Guild whereMotd($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\FreedomCore\TrinityCore\Character\Models\Guild whereName($value)
+ * @mixin \Eloquent
  */
 class Guild extends CharacterBaseModel
 {

@@ -4,7 +4,18 @@ use FreedomCore\TrinityCore\Character\Models\CharacterBaseModel;
 
 /**
  * Class CharacterSpell
+ *
  * @package FreedomCore\TrinityCore\Character\Models
+ * @property int $guid Global Unique Identifier
+ * @property int $spell Spell Identifier
+ * @property int $active
+ * @property int $disabled
+ * @method static \Illuminate\Database\Eloquent\Builder|\FreedomCore\TrinityCore\Character\Models\CharacterBaseModel incrementID()
+ * @method static \Illuminate\Database\Eloquent\Builder|\FreedomCore\TrinityCore\Character\Models\CharacterSpell whereActive($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\FreedomCore\TrinityCore\Character\Models\CharacterSpell whereDisabled($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\FreedomCore\TrinityCore\Character\Models\CharacterSpell whereGuid($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\FreedomCore\TrinityCore\Character\Models\CharacterSpell whereSpell($value)
+ * @mixin \Eloquent
  */
 class CharacterSpell extends CharacterBaseModel
 {

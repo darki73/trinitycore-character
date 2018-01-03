@@ -4,7 +4,18 @@ use FreedomCore\TrinityCore\Character\Models\CharacterBaseModel;
 
 /**
  * Class GuildBankItem
+ *
  * @package FreedomCore\TrinityCore\Character\Models
+ * @property int $guildid
+ * @property int $TabId
+ * @property int $SlotId
+ * @property int $item_guid
+ * @method static \Illuminate\Database\Eloquent\Builder|\FreedomCore\TrinityCore\Character\Models\CharacterBaseModel incrementID()
+ * @method static \Illuminate\Database\Eloquent\Builder|\FreedomCore\TrinityCore\Character\Models\GuildBankItem whereGuildid($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\FreedomCore\TrinityCore\Character\Models\GuildBankItem whereItemGuid($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\FreedomCore\TrinityCore\Character\Models\GuildBankItem whereSlotId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\FreedomCore\TrinityCore\Character\Models\GuildBankItem whereTabId($value)
+ * @mixin \Eloquent
  */
 class GuildBankItem extends CharacterBaseModel
 {

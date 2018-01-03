@@ -4,7 +4,16 @@ use FreedomCore\TrinityCore\Character\Models\CharacterBaseModel;
 
 /**
  * Class CharacterGarrison
+ *
  * @package FreedomCore\TrinityCore\Character\Models
+ * @property int $guid
+ * @property int $siteLevelId
+ * @property int $followerActivationsRemainingToday
+ * @method static \Illuminate\Database\Eloquent\Builder|\FreedomCore\TrinityCore\Character\Models\CharacterBaseModel incrementID()
+ * @method static \Illuminate\Database\Eloquent\Builder|\FreedomCore\TrinityCore\Character\Models\CharacterGarrison whereFollowerActivationsRemainingToday($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\FreedomCore\TrinityCore\Character\Models\CharacterGarrison whereGuid($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\FreedomCore\TrinityCore\Character\Models\CharacterGarrison whereSiteLevelId($value)
+ * @mixin \Eloquent
  */
 class CharacterGarrison extends CharacterBaseModel
 {

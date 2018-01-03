@@ -4,7 +4,24 @@ use FreedomCore\TrinityCore\Character\Models\CharacterBaseModel;
 
 /**
  * Class PetAuraEffect
+ *
  * @package FreedomCore\TrinityCore\Character\Models
+ * @property int $guid Global Unique Identifier
+ * @property mixed $casterGuid Full Global Unique Identifier
+ * @property int $spell
+ * @property int $effectMask
+ * @property int $effectIndex
+ * @property int $amount
+ * @property int $baseAmount
+ * @method static \Illuminate\Database\Eloquent\Builder|\FreedomCore\TrinityCore\Character\Models\CharacterBaseModel incrementID()
+ * @method static \Illuminate\Database\Eloquent\Builder|\FreedomCore\TrinityCore\Character\Models\PetAuraEffect whereAmount($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\FreedomCore\TrinityCore\Character\Models\PetAuraEffect whereBaseAmount($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\FreedomCore\TrinityCore\Character\Models\PetAuraEffect whereCasterGuid($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\FreedomCore\TrinityCore\Character\Models\PetAuraEffect whereEffectIndex($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\FreedomCore\TrinityCore\Character\Models\PetAuraEffect whereEffectMask($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\FreedomCore\TrinityCore\Character\Models\PetAuraEffect whereGuid($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\FreedomCore\TrinityCore\Character\Models\PetAuraEffect whereSpell($value)
+ * @mixin \Eloquent
  */
 class PetAuraEffect extends CharacterBaseModel
 {

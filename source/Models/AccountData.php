@@ -4,7 +4,18 @@ use FreedomCore\TrinityCore\Character\Models\CharacterBaseModel;
 
 /**
  * Class AccountData
+ *
  * @package FreedomCore\TrinityCore\Character\Models
+ * @property int $accountId Account Identifier
+ * @property int $type
+ * @property int $time
+ * @property bool $data
+ * @method static \Illuminate\Database\Eloquent\Builder|\FreedomCore\TrinityCore\Character\Models\CharacterBaseModel incrementID()
+ * @method static \Illuminate\Database\Eloquent\Builder|\FreedomCore\TrinityCore\Character\Models\AccountData whereAccountId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\FreedomCore\TrinityCore\Character\Models\AccountData whereData($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\FreedomCore\TrinityCore\Character\Models\AccountData whereTime($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\FreedomCore\TrinityCore\Character\Models\AccountData whereType($value)
+ * @mixin \Eloquent
  */
 class AccountData extends CharacterBaseModel
 {

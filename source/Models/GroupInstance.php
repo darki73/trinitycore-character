@@ -4,7 +4,16 @@ use FreedomCore\TrinityCore\Character\Models\CharacterBaseModel;
 
 /**
  * Class GroupInstance
+ *
  * @package FreedomCore\TrinityCore\Character\Models
+ * @property int $guid
+ * @property int $instance
+ * @property int $permanent
+ * @method static \Illuminate\Database\Eloquent\Builder|\FreedomCore\TrinityCore\Character\Models\CharacterBaseModel incrementID()
+ * @method static \Illuminate\Database\Eloquent\Builder|\FreedomCore\TrinityCore\Character\Models\GroupInstance whereGuid($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\FreedomCore\TrinityCore\Character\Models\GroupInstance whereInstance($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\FreedomCore\TrinityCore\Character\Models\GroupInstance wherePermanent($value)
+ * @mixin \Eloquent
  */
 class GroupInstance extends CharacterBaseModel
 {

@@ -4,7 +4,16 @@ use FreedomCore\TrinityCore\Character\Models\CharacterBaseModel;
 
 /**
  * Class Worldstate
+ *
  * @package FreedomCore\TrinityCore\Character\Models
+ * @property int $entry
+ * @property int $value
+ * @property string|null $comment
+ * @method static \Illuminate\Database\Eloquent\Builder|\FreedomCore\TrinityCore\Character\Models\CharacterBaseModel incrementID()
+ * @method static \Illuminate\Database\Eloquent\Builder|\FreedomCore\TrinityCore\Character\Models\Worldstate whereComment($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\FreedomCore\TrinityCore\Character\Models\Worldstate whereEntry($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\FreedomCore\TrinityCore\Character\Models\Worldstate whereValue($value)
+ * @mixin \Eloquent
  */
 class Worldstate extends CharacterBaseModel
 {

@@ -4,7 +4,18 @@ use FreedomCore\TrinityCore\Character\Models\CharacterBaseModel;
 
 /**
  * Class PetitionSign
+ *
  * @package FreedomCore\TrinityCore\Character\Models
+ * @property int $ownerguid
+ * @property int $petitionguid
+ * @property int $playerguid
+ * @property int $player_account
+ * @method static \Illuminate\Database\Eloquent\Builder|\FreedomCore\TrinityCore\Character\Models\CharacterBaseModel incrementID()
+ * @method static \Illuminate\Database\Eloquent\Builder|\FreedomCore\TrinityCore\Character\Models\PetitionSign whereOwnerguid($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\FreedomCore\TrinityCore\Character\Models\PetitionSign wherePetitionguid($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\FreedomCore\TrinityCore\Character\Models\PetitionSign wherePlayerAccount($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\FreedomCore\TrinityCore\Character\Models\PetitionSign wherePlayerguid($value)
+ * @mixin \Eloquent
  */
 class PetitionSign extends CharacterBaseModel
 {

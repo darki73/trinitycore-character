@@ -4,7 +4,28 @@ use FreedomCore\TrinityCore\Character\Models\CharacterBaseModel;
 
 /**
  * Class AccountTutorial
+ *
  * @package FreedomCore\TrinityCore\Character\Models
+ * @property int $accountId Account Identifier
+ * @property int $tut0
+ * @property int $tut1
+ * @property int $tut2
+ * @property int $tut3
+ * @property int $tut4
+ * @property int $tut5
+ * @property int $tut6
+ * @property int $tut7
+ * @method static \Illuminate\Database\Eloquent\Builder|\FreedomCore\TrinityCore\Character\Models\CharacterBaseModel incrementID()
+ * @method static \Illuminate\Database\Eloquent\Builder|\FreedomCore\TrinityCore\Character\Models\AccountTutorial whereAccountId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\FreedomCore\TrinityCore\Character\Models\AccountTutorial whereTut0($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\FreedomCore\TrinityCore\Character\Models\AccountTutorial whereTut1($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\FreedomCore\TrinityCore\Character\Models\AccountTutorial whereTut2($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\FreedomCore\TrinityCore\Character\Models\AccountTutorial whereTut3($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\FreedomCore\TrinityCore\Character\Models\AccountTutorial whereTut4($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\FreedomCore\TrinityCore\Character\Models\AccountTutorial whereTut5($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\FreedomCore\TrinityCore\Character\Models\AccountTutorial whereTut6($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\FreedomCore\TrinityCore\Character\Models\AccountTutorial whereTut7($value)
+ * @mixin \Eloquent
  */
 class AccountTutorial extends CharacterBaseModel
 {

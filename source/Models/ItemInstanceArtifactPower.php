@@ -4,7 +4,16 @@ use FreedomCore\TrinityCore\Character\Models\CharacterBaseModel;
 
 /**
  * Class ItemInstanceArtifactPower
+ *
  * @package FreedomCore\TrinityCore\Character\Models
+ * @property int $itemGuid
+ * @property int $artifactPowerId
+ * @property int $purchasedRank
+ * @method static \Illuminate\Database\Eloquent\Builder|\FreedomCore\TrinityCore\Character\Models\CharacterBaseModel incrementID()
+ * @method static \Illuminate\Database\Eloquent\Builder|\FreedomCore\TrinityCore\Character\Models\ItemInstanceArtifactPower whereArtifactPowerId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\FreedomCore\TrinityCore\Character\Models\ItemInstanceArtifactPower whereItemGuid($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\FreedomCore\TrinityCore\Character\Models\ItemInstanceArtifactPower wherePurchasedRank($value)
+ * @mixin \Eloquent
  */
 class ItemInstanceArtifactPower extends CharacterBaseModel
 {

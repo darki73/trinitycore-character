@@ -4,7 +4,36 @@ use FreedomCore\TrinityCore\Character\Models\CharacterBaseModel;
 
 /**
  * Class ItemInstanceGem
+ *
  * @package FreedomCore\TrinityCore\Character\Models
+ * @property int $itemGuid
+ * @property int $gemItemId1
+ * @property string|null $gemBonuses1
+ * @property int $gemContext1
+ * @property int $gemScalingLevel1
+ * @property int $gemItemId2
+ * @property string|null $gemBonuses2
+ * @property int $gemContext2
+ * @property int $gemScalingLevel2
+ * @property int $gemItemId3
+ * @property string|null $gemBonuses3
+ * @property int $gemContext3
+ * @property int $gemScalingLevel3
+ * @method static \Illuminate\Database\Eloquent\Builder|\FreedomCore\TrinityCore\Character\Models\CharacterBaseModel incrementID()
+ * @method static \Illuminate\Database\Eloquent\Builder|\FreedomCore\TrinityCore\Character\Models\ItemInstanceGem whereGemBonuses1($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\FreedomCore\TrinityCore\Character\Models\ItemInstanceGem whereGemBonuses2($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\FreedomCore\TrinityCore\Character\Models\ItemInstanceGem whereGemBonuses3($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\FreedomCore\TrinityCore\Character\Models\ItemInstanceGem whereGemContext1($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\FreedomCore\TrinityCore\Character\Models\ItemInstanceGem whereGemContext2($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\FreedomCore\TrinityCore\Character\Models\ItemInstanceGem whereGemContext3($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\FreedomCore\TrinityCore\Character\Models\ItemInstanceGem whereGemItemId1($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\FreedomCore\TrinityCore\Character\Models\ItemInstanceGem whereGemItemId2($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\FreedomCore\TrinityCore\Character\Models\ItemInstanceGem whereGemItemId3($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\FreedomCore\TrinityCore\Character\Models\ItemInstanceGem whereGemScalingLevel1($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\FreedomCore\TrinityCore\Character\Models\ItemInstanceGem whereGemScalingLevel2($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\FreedomCore\TrinityCore\Character\Models\ItemInstanceGem whereGemScalingLevel3($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\FreedomCore\TrinityCore\Character\Models\ItemInstanceGem whereItemGuid($value)
+ * @mixin \Eloquent
  */
 class ItemInstanceGem extends CharacterBaseModel
 {

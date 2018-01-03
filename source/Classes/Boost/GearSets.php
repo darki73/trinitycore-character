@@ -3,9 +3,6 @@
 use FreedomCore\TrinityCore\Character\Models\Character;
 use FreedomCore\TrinityCore\Character\Models\CharacterInventory;
 use FreedomCore\TrinityCore\Character\Models\ItemInstance;
-use FreedomCore\TrinityCore\Console\Classes\Item;
-use FreedomCore\TrinityCore\Console\Classes\Items;
-use FreedomCore\TrinityCore\Console\Client as SOAPClient;
 
 /**
  * Class GearSets
@@ -1300,89 +1297,15 @@ class GearSets
         }
     }
 
-    public function boostCharacter(Character $character, int $specID, int $level, SOAPClient $client)
-    {
+    /**
+     * Check if gearing strategy loaded
+     */
+    public function isGearingStrategyLoaded() {
         if (!$this->strategyLoaded) {
             throw new \RuntimeException('Gearing strategy is not loaded!');
         }
-        $classData = $this->getClassDataByLevel($character->class, $level)[$specID];
-        if ($character->level >= $level) {
-            return [
-                'type'      =>  'error',
-                'message'   =>  'This character is not eligible for character boost!',
-                'reason'    =>  'Level of selected character is already ' . $level . ' or higher!'
-            ];
-        } else {
-            $forDeletion = [];
-//            foreach ($character->inventory as $item) {
-//                if ($item->reference !== null)
-//                    if (array_key_exists($item->slot, $classData)) {
-//                        $forDeletion[] = $item->reference->itemEntry;
-//                        $item->reference()->delete();
-//                        $item->delete();
-//                    }
-//            }
-            $items = [];
-            foreach ($classData as $slot => $item) {
-                $items[] = new Item($item);
-//                $id = $this->createItemInstance($character->guid, $item);
-//                if (!$this->createCharacterInventoryEntry($character->guid, $slot, $id))
-//                    dd('Unrecoverable error occurred while tried to create item ' . $id . ' for character ' . $character->guid . ' in slot ' . $slot);
-            }
-            $chunks = array_chunk($items, 12);
-            foreach ($chunks as $index => $chunk) {
-                $client->send()->items($character->name, 'Character Boost', 'Thank you for using character boost!\n This is the ' . ($index + 1) . ' part of the message out of ' . count($chunks), new Items($chunk));
-            }
-//            $character->update([
-//                'level' =>  $level
-//            ]);
-        }
     }
 
-    /**
-     * Create Item Instance
-     * @param int $characterID
-     * @param int $itemID
-     * @return int
-     */
-    protected function createItemInstance(int $characterID, int $itemID) : int
-    {
-        try {
-            $id = ItemInstance::incrementID();
-            $item = new ItemInstance();
-            $item->guid = $id;
-            $item->itemEntry = $itemID;
-            $item->owner_guid = $characterID;
-            $item->count = 1;
-            $item->enchantments = '0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 ';
-            $item->save();
-        } catch (\Exception $e) {
-            dd('Unrecoverable error occurred while tried to create item ' . $itemID . ' for character ' . $characterID);
-        }
-        return $id;
-    }
-
-    /**
-     * Create Character Inventory Entry
-     * @param int $characterID
-     * @param int $slotID
-     * @param int $itemID
-     * @return bool
-     */
-    protected function createCharacterInventoryEntry(int $characterID, int $slotID, int $itemID) : bool
-    {
-        try {
-            $item = new CharacterInventory();
-            $item->guid = $characterID;
-            $item->bag = 0;
-            $item->slot = $slotID;
-            $item->item = $itemID;
-            $item->save();
-        } catch (\Exception $exception) {
-            return false;
-        }
-        return true;
-    }
 
     /**
      * Get list of all available classes

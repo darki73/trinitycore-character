@@ -4,7 +4,18 @@ use FreedomCore\TrinityCore\Character\Models\CharacterBaseModel;
 
 /**
  * Class InstanceScenarioProgress
+ *
  * @package FreedomCore\TrinityCore\Character\Models
+ * @property int $id
+ * @property int $criteria
+ * @property int $counter
+ * @property int $date
+ * @method static \Illuminate\Database\Eloquent\Builder|\FreedomCore\TrinityCore\Character\Models\CharacterBaseModel incrementID()
+ * @method static \Illuminate\Database\Eloquent\Builder|\FreedomCore\TrinityCore\Character\Models\InstanceScenarioProgress whereCounter($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\FreedomCore\TrinityCore\Character\Models\InstanceScenarioProgress whereCriteria($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\FreedomCore\TrinityCore\Character\Models\InstanceScenarioProgress whereDate($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\FreedomCore\TrinityCore\Character\Models\InstanceScenarioProgress whereId($value)
+ * @mixin \Eloquent
  */
 class InstanceScenarioProgress extends CharacterBaseModel
 {

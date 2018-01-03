@@ -4,7 +4,20 @@ use FreedomCore\TrinityCore\Character\Models\CharacterBaseModel;
 
 /**
  * Class GuildBankRight
+ *
  * @package FreedomCore\TrinityCore\Character\Models
+ * @property int $guildid
+ * @property int $TabId
+ * @property int $rid
+ * @property int $gbright
+ * @property int $SlotPerDay
+ * @method static \Illuminate\Database\Eloquent\Builder|\FreedomCore\TrinityCore\Character\Models\CharacterBaseModel incrementID()
+ * @method static \Illuminate\Database\Eloquent\Builder|\FreedomCore\TrinityCore\Character\Models\GuildBankRight whereGbright($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\FreedomCore\TrinityCore\Character\Models\GuildBankRight whereGuildid($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\FreedomCore\TrinityCore\Character\Models\GuildBankRight whereRid($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\FreedomCore\TrinityCore\Character\Models\GuildBankRight whereSlotPerDay($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\FreedomCore\TrinityCore\Character\Models\GuildBankRight whereTabId($value)
+ * @mixin \Eloquent
  */
 class GuildBankRight extends CharacterBaseModel
 {

@@ -4,7 +4,16 @@ use FreedomCore\TrinityCore\Character\Models\CharacterBaseModel;
 
 /**
  * Class ItemInstanceArtifact
+ *
  * @package FreedomCore\TrinityCore\Character\Models
+ * @property int $itemGuid
+ * @property int $xp
+ * @property int $artifactAppearanceId
+ * @method static \Illuminate\Database\Eloquent\Builder|\FreedomCore\TrinityCore\Character\Models\CharacterBaseModel incrementID()
+ * @method static \Illuminate\Database\Eloquent\Builder|\FreedomCore\TrinityCore\Character\Models\ItemInstanceArtifact whereArtifactAppearanceId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\FreedomCore\TrinityCore\Character\Models\ItemInstanceArtifact whereItemGuid($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\FreedomCore\TrinityCore\Character\Models\ItemInstanceArtifact whereXp($value)
+ * @mixin \Eloquent
  */
 class ItemInstanceArtifact extends CharacterBaseModel
 {

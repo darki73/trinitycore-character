@@ -4,7 +4,14 @@ use FreedomCore\TrinityCore\Character\Models\CharacterBaseModel;
 
 /**
  * Class CorpsePhase
+ *
  * @package FreedomCore\TrinityCore\Character\Models
+ * @property int $OwnerGuid
+ * @property int $PhaseId
+ * @method static \Illuminate\Database\Eloquent\Builder|\FreedomCore\TrinityCore\Character\Models\CharacterBaseModel incrementID()
+ * @method static \Illuminate\Database\Eloquent\Builder|\FreedomCore\TrinityCore\Character\Models\CorpsePhase whereOwnerGuid($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\FreedomCore\TrinityCore\Character\Models\CorpsePhase wherePhaseId($value)
+ * @mixin \Eloquent
  */
 class CorpsePhase extends CharacterBaseModel
 {

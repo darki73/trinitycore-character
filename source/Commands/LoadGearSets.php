@@ -103,7 +103,7 @@ class LoadGearSets extends Command
         $gearLevel = $gearSets->gearLevels($levelID);
         foreach ($dataForLevel as $specID => $slots) {
             foreach ($slots as $slotID => $itemID) {
-                $wowDBGearLinks[$specID][] = sprintf($gearSets->getWebsiteSearchLink(), $gearLevel, $gearLevel, $levelID, $levelID, $classID, $specID, $gearSets->getWebsiteSlots($slotID));
+                $wowDBGearLinks[$specID][$slotID] = sprintf($gearSets->getWebsiteSearchLink(), $gearLevel, $gearLevel, $levelID, $levelID, $classID, $specID, $gearSets->getWebsiteSlots($slotID));
             }
         }
         return $wowDBGearLinks;

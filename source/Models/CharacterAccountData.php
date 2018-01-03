@@ -4,7 +4,10 @@ use FreedomCore\TrinityCore\Character\Models\CharacterBaseModel;
 
 /**
  * Class CharacterAccountData
+ *
  * @package FreedomCore\TrinityCore\Character\Models
+ * @method static \Illuminate\Database\Eloquent\Builder|\FreedomCore\TrinityCore\Character\Models\CharacterBaseModel incrementID()
+ * @mixin \Eloquent
  */
 class CharacterAccountData extends CharacterBaseModel
 {

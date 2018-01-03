@@ -4,7 +4,16 @@ use FreedomCore\TrinityCore\Character\Models\CharacterBaseModel;
 
 /**
  * Class MailItem
+ *
  * @package FreedomCore\TrinityCore\Character\Models
+ * @property int $mail_id
+ * @property int $item_guid
+ * @property int $receiver Character Global Unique Identifier
+ * @method static \Illuminate\Database\Eloquent\Builder|\FreedomCore\TrinityCore\Character\Models\CharacterBaseModel incrementID()
+ * @method static \Illuminate\Database\Eloquent\Builder|\FreedomCore\TrinityCore\Character\Models\MailItem whereItemGuid($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\FreedomCore\TrinityCore\Character\Models\MailItem whereMailId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\FreedomCore\TrinityCore\Character\Models\MailItem whereReceiver($value)
+ * @mixin \Eloquent
  */
 class MailItem extends CharacterBaseModel
 {

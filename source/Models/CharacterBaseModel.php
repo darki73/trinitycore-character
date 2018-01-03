@@ -62,10 +62,11 @@ abstract class CharacterBaseModel extends Model
 
     /**
      * CharacterBaseModel constructor.
+     * @param array $attributes
      */
-    public function __construct()
+    public function __construct(array $attributes = [])
     {
-        parent::__construct();
+        parent::__construct($attributes);
         $this->getDatabaseConnection();
     }
 

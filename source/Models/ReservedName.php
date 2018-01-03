@@ -4,7 +4,12 @@ use FreedomCore\TrinityCore\Character\Models\CharacterBaseModel;
 
 /**
  * Class ReservedName
+ *
  * @package FreedomCore\TrinityCore\Character\Models
+ * @property string $name
+ * @method static \Illuminate\Database\Eloquent\Builder|\FreedomCore\TrinityCore\Character\Models\CharacterBaseModel incrementID()
+ * @method static \Illuminate\Database\Eloquent\Builder|\FreedomCore\TrinityCore\Character\Models\ReservedName whereName($value)
+ * @mixin \Eloquent
  */
 class ReservedName extends CharacterBaseModel
 {

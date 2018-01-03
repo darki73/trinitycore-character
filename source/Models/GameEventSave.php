@@ -4,7 +4,16 @@ use FreedomCore\TrinityCore\Character\Models\CharacterBaseModel;
 
 /**
  * Class GameEventSave
+ *
  * @package FreedomCore\TrinityCore\Character\Models
+ * @property int $eventEntry
+ * @property int $state
+ * @property int $next_start
+ * @method static \Illuminate\Database\Eloquent\Builder|\FreedomCore\TrinityCore\Character\Models\CharacterBaseModel incrementID()
+ * @method static \Illuminate\Database\Eloquent\Builder|\FreedomCore\TrinityCore\Character\Models\GameEventSave whereEventEntry($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\FreedomCore\TrinityCore\Character\Models\GameEventSave whereNextStart($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\FreedomCore\TrinityCore\Character\Models\GameEventSave whereState($value)
+ * @mixin \Eloquent
  */
 class GameEventSave extends CharacterBaseModel
 {

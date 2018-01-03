@@ -4,7 +4,20 @@ use FreedomCore\TrinityCore\Character\Models\CharacterBaseModel;
 
 /**
  * Class PetSpellCooldown
+ *
  * @package FreedomCore\TrinityCore\Character\Models
+ * @property int $guid Global Unique Identifier, Low part
+ * @property int $spell Spell Identifier
+ * @property int $time
+ * @property int $categoryId Spell category Id
+ * @property int $categoryEnd
+ * @method static \Illuminate\Database\Eloquent\Builder|\FreedomCore\TrinityCore\Character\Models\CharacterBaseModel incrementID()
+ * @method static \Illuminate\Database\Eloquent\Builder|\FreedomCore\TrinityCore\Character\Models\PetSpellCooldown whereCategoryEnd($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\FreedomCore\TrinityCore\Character\Models\PetSpellCooldown whereCategoryId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\FreedomCore\TrinityCore\Character\Models\PetSpellCooldown whereGuid($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\FreedomCore\TrinityCore\Character\Models\PetSpellCooldown whereSpell($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\FreedomCore\TrinityCore\Character\Models\PetSpellCooldown whereTime($value)
+ * @mixin \Eloquent
  */
 class PetSpellCooldown extends CharacterBaseModel
 {

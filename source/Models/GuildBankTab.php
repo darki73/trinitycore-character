@@ -4,7 +4,20 @@ use FreedomCore\TrinityCore\Character\Models\CharacterBaseModel;
 
 /**
  * Class GuildBankTab
+ *
  * @package FreedomCore\TrinityCore\Character\Models
+ * @property int $guildid
+ * @property int $TabId
+ * @property string $TabName
+ * @property string $TabIcon
+ * @property string|null $TabText
+ * @method static \Illuminate\Database\Eloquent\Builder|\FreedomCore\TrinityCore\Character\Models\CharacterBaseModel incrementID()
+ * @method static \Illuminate\Database\Eloquent\Builder|\FreedomCore\TrinityCore\Character\Models\GuildBankTab whereGuildid($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\FreedomCore\TrinityCore\Character\Models\GuildBankTab whereTabIcon($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\FreedomCore\TrinityCore\Character\Models\GuildBankTab whereTabId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\FreedomCore\TrinityCore\Character\Models\GuildBankTab whereTabName($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\FreedomCore\TrinityCore\Character\Models\GuildBankTab whereTabText($value)
+ * @mixin \Eloquent
  */
 class GuildBankTab extends CharacterBaseModel
 {
