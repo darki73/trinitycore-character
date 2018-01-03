@@ -65,8 +65,9 @@ class Character
         $this->fileSystem = app(FileSystem::class);
         $this->reader = $reader;
         $this->findPackageVersion();
-        if (strlen($characterName) > 1)
+        if (strlen($characterName) > 1) {
             $this->loadCharacterData($characterName);
+        }
     }
 
     /**
@@ -74,7 +75,8 @@ class Character
      * @param string $characterName
      * @throws \Exception
      */
-    public function loadCharacterData(string $characterName) {
+    public function loadCharacterData(string $characterName)
+    {
         $this->loadCharacterModelData($characterName)->loadCharacterInventory()->loadCharacterProfessions();
     }
 
@@ -82,7 +84,8 @@ class Character
      * Get character model
      * @return CharacterModel
      */
-    public function model() : CharacterModel {
+    public function model() : CharacterModel
+    {
         return $this->character;
     }
 
@@ -90,9 +93,11 @@ class Character
      * Get reader instance
      * @return DB2Reader
      */
-    public function reader() : DB2Reader {
-        if ($this->reader === null)
+    public function reader() : DB2Reader
+    {
+        if ($this->reader === null) {
             Helper::throwRuntimeException('DB2Reader has not been instantiated!');
+        }
         return $this->reader;
     }
 
@@ -100,7 +105,8 @@ class Character
      * Get character inventory
      * @return array
      */
-    public function inventory() : array {
+    public function inventory() : array
+    {
         return $this->inventory;
     }
 
@@ -108,7 +114,8 @@ class Character
      * Get character professions
      * @return Collection
      */
-    public function professions() : Collection {
+    public function professions() : Collection
+    {
         return $this->professions;
     }
 
@@ -117,7 +124,8 @@ class Character
      * @param SOAPClient $client
      * @return Boost
      */
-    public function boost(SOAPClient $client) : Boost {
+    public function boost(SOAPClient $client) : Boost
+    {
         return (new Boost($this, $client));
     }
 
@@ -151,10 +159,11 @@ class Character
     {
         $characterName = Helper::getCharacterName($characterName);
         $characterData = CharacterModel::where('name', $characterName)->first();
-        if ($characterData === null)
+        if ($characterData === null) {
             throw new \RuntimeException('Unable to find character with name: ' . $characterName);
-        else
+        } else {
             $this->character = $characterData;
+        }
         return $this;
     }
 
@@ -163,7 +172,8 @@ class Character
      * @return Character
      * @throws \Exception
      */
-    protected function loadCharacterInventory() : Character {
+    protected function loadCharacterInventory() : Character
+    {
         $characterInventory = $this->character->inventory;
         $characterItems = [];
         foreach ($characterInventory as $inventoryEntry) {
@@ -184,12 +194,12 @@ class Character
      * @return Character
      * @throws \Exception
      */
-    protected function loadCharacterProfessions() : Character {
+    protected function loadCharacterProfessions() : Character
+    {
         $profession = new Profession();
         $profession->loadProfessions(new DB2Reader(true));
         $profession->loadCharacterProfessions($this->character);
         $this->professions = $profession->getCharacterProfessions();
         return $this;
     }
-
 }

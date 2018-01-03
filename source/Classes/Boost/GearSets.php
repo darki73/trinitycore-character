@@ -1300,7 +1300,8 @@ class GearSets
     /**
      * Check if gearing strategy loaded
      */
-    public function isGearingStrategyLoaded() {
+    public function isGearingStrategyLoaded()
+    {
         if (!$this->strategyLoaded) {
             throw new \RuntimeException('Gearing strategy is not loaded!');
         }

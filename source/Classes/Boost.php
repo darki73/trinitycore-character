@@ -1,6 +1,5 @@
 <?php namespace FreedomCore\TrinityCore\Character\Classes;
 
-
 use FreedomCore\TrinityCore\Character\Character;
 use FreedomCore\TrinityCore\Character\Classes\Boost\GearSets;
 use FreedomCore\TrinityCore\Character\Models\Character as CharacterModel;
@@ -17,7 +16,8 @@ use FreedomCore\TrinityCore\Support\Common\Helper;
  * Class Boost
  * @package FreedomCore\TrinityCore\Character\Classes
  */
-class Boost {
+class Boost
+{
 
     /**
      * SOAPClient Instance
@@ -88,7 +88,8 @@ class Boost {
      * @param Character $character
      * @param SOAPClient $client
      */
-    public function __construct(Character $character, SOAPClient $client) {
+    public function __construct(Character $character, SOAPClient $client)
+    {
         $this->super = $character;
         $this->character = $character->model();
         $this->client = $client;
@@ -99,7 +100,8 @@ class Boost {
      * Get Client Instance
      * @return SOAPClient
      */
-    public function getClient() : SOAPClient {
+    public function getClient() : SOAPClient
+    {
         return $this->client;
     }
 
@@ -107,7 +109,8 @@ class Boost {
      * Get Gear Instance
      * @return GearSets
      */
-    public function getGear() : GearSets {
+    public function getGear() : GearSets
+    {
         return $this->gear;
     }
 
@@ -115,7 +118,8 @@ class Boost {
      * Get message title
      * @return string
      */
-    public function getMessageTitle() : string {
+    public function getMessageTitle() : string
+    {
         return ($this->messageTitle !== null) ? $this->messageTitle : 'undefined';
     }
 
@@ -123,7 +127,8 @@ class Boost {
      * Get message body
      * @return string
      */
-    public function getMessageBody() : string {
+    public function getMessageBody() : string
+    {
         return ($this->messageBody !== null) ? $this->messageBody : 'undefined';
     }
 
@@ -132,7 +137,8 @@ class Boost {
      * @param SOAPClient $client
      * @return Boost
      */
-    public function setClient(SOAPClient $client) : Boost {
+    public function setClient(SOAPClient $client) : Boost
+    {
         $this->client = $client;
         return $this;
     }
@@ -142,7 +148,8 @@ class Boost {
      * @param GearSets $gearSets
      * @return Boost
      */
-    public function setGear(GearSets $gearSets) : Boost {
+    public function setGear(GearSets $gearSets) : Boost
+    {
         $this->gear = $gearSets;
         return $this;
     }
@@ -152,7 +159,8 @@ class Boost {
      * @param string $title
      * @return Boost
      */
-    public function setMessageTitle(string $title) : Boost {
+    public function setMessageTitle(string $title) : Boost
+    {
         $this->messageTitle = $title;
         return $this;
     }
@@ -162,7 +170,8 @@ class Boost {
      * @param string $body
      * @return Boost
      */
-    public function setMessageBody(string $body) : Boost {
+    public function setMessageBody(string $body) : Boost
+    {
         $this->messageBody = $body;
         return $this;
     }
@@ -172,10 +181,12 @@ class Boost {
      * @param int $level
      * @return Boost
      */
-    public function boostTo(int $level) : Boost {
+    public function boostTo(int $level) : Boost
+    {
         $character = $this->character;
-        if ($this->character->level >= $level)
+        if ($this->character->level >= $level) {
             throw new \RuntimeException('Character ' . $character->name . ' is already at the level ' . $character->level . ' thus it cannot be boosted to level ' . $level);
+        }
         $this->boostData['level'] = $level;
         return $this;
     }
@@ -185,14 +196,17 @@ class Boost {
      * @param int $spec
      * @return Boost
      */
-    public function withSpec(int $spec) : Boost {
-        if ($this->boostData['level'] === 0)
+    public function withSpec(int $spec) : Boost
+    {
+        if ($this->boostData['level'] === 0) {
             throw new \RuntimeException('You have to specify the level for the character boost first using the boostTo() method!');
+        }
         $character = $this->character;
         $this->gear->isGearingStrategyLoaded();
         $this->boostData['gear'] = $this->gear->getClassDataByLevel($character->class, $this->boostData['level']);
-        if (!array_key_exists($spec, $this->boostData['gear']))
+        if (!array_key_exists($spec, $this->boostData['gear'])) {
             throw new \RuntimeException('This character does not have a spec with ID #' . $spec . ', please consider using one of the following available specs: ' . implode(', ', array_keys($this->boostData['gear'])));
+        }
         $this->boostData['spec'] = $spec;
         return $this;
     }
@@ -203,7 +217,8 @@ class Boost {
      * @throws \Exception
      * @return bool
      */
-    public function boost(bool $boostProfessions = false) : bool {
+    public function boost(bool $boostProfessions = false) : bool
+    {
         try {
             $this->validateMessageStructure();
             $this->sendOldItemsToCharacter();
@@ -211,14 +226,14 @@ class Boost {
                 $this->client->character()->kick($this->character->name, 'Character boost is in progress!');
                 $this->character->update(['online' => 0]);
             }
-            if ($boostProfessions && $this->character->level >= 60)
+            if ($boostProfessions && $this->character->level >= 60) {
                 $this->boostProfessions();
+            }
             $this->character->update([
                 'level' =>  $this->boostData['level'],
                 'money' =>  $this->character->money + $this->moneyBoost[$this->boostData['level']]
             ]);
         } catch (\Exception $exception) {
-
             return false;
         }
         return true;
@@ -227,11 +242,14 @@ class Boost {
     /**
      * Validate message structure
      */
-    private function validateMessageStructure() {
-        if ($this->messageTitle === null)
+    private function validateMessageStructure()
+    {
+        if ($this->messageTitle === null) {
             Helper::throwRuntimeException('In order to be able to perform this action, you have to set the message title first using the setMessageTitle() method!');
-        if ($this->messageBody === null)
+        }
+        if ($this->messageBody === null) {
             Helper::throwRuntimeException('In order to be able to perform this action, you have to set the message body first using the setMessageBody() method!');
+        }
     }
 
     /**
@@ -239,7 +257,8 @@ class Boost {
      * @param bool $deleteItems
      * @throws \Exception
      */
-    private function sendOldItemsToCharacter(bool $deleteItems = true) {
+    private function sendOldItemsToCharacter(bool $deleteItems = true)
+    {
         $mailBack = [];
         $super = $this->super;
         /**
@@ -250,8 +269,9 @@ class Boost {
                 $newItem = new Item();
                 $newItem->setItemID($item->getItemID());
                 $mailBack[] = $newItem;
-                if ($deleteItems)
+                if ($deleteItems) {
                     $this->deleteItemInstance($item->getUpdatedInstance());
+                }
             }
         }
         $chunks = array_chunk($mailBack, 12);
@@ -283,7 +303,8 @@ class Boost {
      * @param ItemInstance $instance
      * @throws \Exception
      */
-    protected function deleteItemInstance(ItemInstance $instance) {
+    protected function deleteItemInstance(ItemInstance $instance)
+    {
         ItemInstance::destroy($instance->guid);
         CharacterInventory::destroy($instance->guid);
     }
@@ -293,7 +314,8 @@ class Boost {
      * @param Item $item
      * @return int
      */
-    protected function createItemInstance(Item $item) {
+    protected function createItemInstance(Item $item)
+    {
         $durability = new Durability($item);
         try {
             $guid = (int) ItemInstance::incrementID();
@@ -313,7 +335,8 @@ class Boost {
     /**
      * Boost characters professions
      */
-    protected function boostProfessions() {
+    protected function boostProfessions()
+    {
         $super = $this->super;
         if (!empty($super->professions())) { // Character has professions, so we are boosting them
             $boostProfessionsTo = $this->professionsBoost[$this->boostData['level']];
@@ -328,5 +351,4 @@ class Boost {
             dd('No professions found!');
         }
     }
-
 }
