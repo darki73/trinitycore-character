@@ -201,21 +201,27 @@ class Boost {
      * Actually boost character
      * @param bool $boostProfessions
      * @throws \Exception
+     * @return bool
      */
-    public function boost(bool $boostProfessions = false) {
-        $this->validateMessageStructure();
-        $this->sendOldItemsToCharacter();
-        if ($this->character->online) {
-            $this->client->character()->kick($this->character->name, 'Character boost is in progress!');
-            $this->character->update(['online' => 0]);
+    public function boost(bool $boostProfessions = false) : bool {
+        try {
+            $this->validateMessageStructure();
+            $this->sendOldItemsToCharacter();
+            if ($this->character->online) {
+                $this->client->character()->kick($this->character->name, 'Character boost is in progress!');
+                $this->character->update(['online' => 0]);
+            }
+            if ($boostProfessions && $this->character->level >= 60)
+                $this->boostProfessions();
+            $this->character->update([
+                'level' =>  $this->boostData['level'],
+                'money' =>  $this->character->money + $this->moneyBoost[$this->boostData['level']]
+            ]);
+        } catch (\Exception $exception) {
+
+            return false;
         }
-        if ($boostProfessions && $this->character->level >= 60)
-            $this->boostProfessions();
-        $this->character->update([
-            'level' =>  $this->boostData['level'],
-            'money' =>  $this->character->money + $this->moneyBoost[$this->boostData['level']]
-        ]);
-        dd('Character boost successfully completed!');
+        return true;
     }
 
     /**
